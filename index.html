@@ -2,35 +2,19 @@
 <html>
   <head>
     <meta charset="utf-8">
-
     <title>メールテンプレ作成</title>
-    <style>
-      #title {
-        background-color: #e0ffff
-      }
-      #input{
-        background-color: #CCFFCC
-      }
-      #result{
-        background-color: #FFCCFF
-      }
-    </style>
-
-    <script language="javascript" type="text/javascript">
-      function OnClickButton() {
-        document.getElementById("output").innerHTML
-          = document.getElementById("daigaku").value + "）" + document.getElementById("name").value + 
-            "様 <br> <br> お世話になっております。 <br> CSC）池上です。 <br> <br> 以上、よろしくお願いいたします。";
-        }
+    <link rel="stylesheet" href="mailTemplate.css">
+    <script type="text/javascript" src="mailTemplate.js">
     </script>
   </head>
+  
   <body>
-    <div id="title">
+    <div class="title">
       <h1>メールテンプレ作成</h1>
       <p>大学名、お客様名を入力すると、メールのテンプレを作成できます。</p>
     </div>
 
-    <div id="input">
+    <div class="input">
       <form>
         <p>■大学名<br>
         <input type="text" id="daigaku" size="30"></p>
@@ -41,9 +25,12 @@
       </form>
 
     </div>
-    <div id="result">
+
+    <div class="result">
       <p>【出力結果】</p>
-      <div id="output"></div>
+      <form name="resultForm">
+        <textarea rows="15" cols="70" name="resultTextArea"></textarea>
+      </form>
     </div>
   </body>
 </html>
