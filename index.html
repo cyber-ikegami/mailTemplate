@@ -15,15 +15,13 @@
     </div>
 
     <div class="input">
-      <form>
-        <p>■大学名<br>
-        <input type="text" id="daigaku" size="30"></p>
-        <p>■お客様名<br>
-        <input type="text" id="name" size="30"></p> 
-        <input type="reset" value="リセット">
-        <input type="button" value="決定" onclick="OnClickButton();"/>
-      </form>
+      <p>■大学名<br>
+      <input type="text" id="daigaku" size="30" onblur="InputCheck();"></p>
+      <p>■お客様名<br>
+      <input type="text" id="name" size="30" onblur="InputCheck();"></p> 
 
+      <input type="button" id="reset" value="リセット" onclick="Reset();">
+      <input type="button" id="kettei" value="決定" disabled onclick="OnClickButton();">
     </div>
 
     <div class="result">
