@@ -42,16 +42,20 @@ function resetForm(){
 
 // 出力処理
 function outputResult() {
+	const university = document.getElementById("university").value;
+	const name = document.getElementById("name").value;
+	const number = document.getElementById("number").value;
 	let numberValue = "";
+	
 	if(numberItem.hidden == false){
 		numberValue = 
 		`
-		本件について、案件管理番号：${document.getElementById("number").value}で受け付けました。
+		本件について、案件管理番号：${number}で受け付けました。
 		` .replace(/[ \t\r]+/g, "");
 	}
 
     resultForm.resultTextArea.value=
-    `${document.getElementById("university").value})${document.getElementById("name").value}様
+    `${university})${name}様
 
     お世話になっております。
     CSC）池上です。
