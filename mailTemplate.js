@@ -1,8 +1,8 @@
-function InputRequiredCheck() {
+function inputRequiredCheck() {
 	let flag = 0;
 	const university = document.getElementById("university");
 	const name = document.getElementById("name");
-	const determination = document.getElementById('determination');
+	const determination = document.getElementById("determination");
 
 	if(university.value== ""){
 		flag = 1;
@@ -13,13 +13,13 @@ function InputRequiredCheck() {
 		determination.disabled=flag;
 }
 
-function OnClickResetButton(){
+function onClickResetButton(){
 	document.getElementById("university").value = "";
 	document.getElementById("name").value = "";
-	InputRequiredCheck();
+	inputRequiredCheck();
 }
 
-function OnClickButton() {
+function outputResult() {
     resultForm.resultTextArea.value=
     `${document.getElementById("university").value})${document.getElementById("name").value}様
 
