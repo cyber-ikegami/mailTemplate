@@ -15,12 +15,29 @@
     </div>
 
     <div class="input">
+      <!--テンプレートコンボボックス-->
+      <p>■テンプレート<br>     
+      <select id="template" onchange="checkTemplate();">
+      <option value="null"></option>
+      <option value="reception">受付</option>
+      </select></p>
+
+      <!--大学名入力欄-->
       <p>■大学名<br>
       <input type="text" id="university" size="30" onblur="inputRequiredCheck();"></p>
+
+      <!--お客様名入力欄-->
       <p>■お客様名<br>
       <input type="text" id="name" size="30" onblur="inputRequiredCheck();"></p> 
 
+      <!--案件管理番号入力欄-->
+      <p id="numberItem" hidden>■案件管理番号<br>
+      <input type="text" id="number" size="30" onblur="inputRequiredCheck();"></p> 
+
+      <!--リセットボタン-->
       <input type="button" id="reset" value="リセット" onclick="resetForm();">
+      
+      <!--決定ボタン-->
       <input type="button" id="determination" value="決定" disabled onclick="outputResult();">
     </div>
 
