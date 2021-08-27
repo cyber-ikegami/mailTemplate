@@ -1,30 +1,30 @@
-function InputCheck() {
-	var flag = 0;
-	var daigaku = document.getElementById("daigaku");
-	var name = document.getElementById("name");
+function InputRequiredCheck() {
+	let flag = 0;
+	const university = document.getElementById("university");
+	const name = document.getElementById("name");
+	const determination = document.getElementById('determination');
 
-	if(daigaku.value== ""){
+	if(university.value== ""){
 		flag = 1;
 	}
 	else if(name.value == ""){
 		flag = 1;
 	}
-
-	if(flag){
-		document.getElementById('kettei').disabled=true;
-	} else {
-	   	document.getElementById('kettei').disabled=false;
-	}	
+		determination.disabled=flag;
 }
 
-function Reset(){
-	document.getElementById("daigaku").value = "";
+function OnClickResetButton(){
+	document.getElementById("university").value = "";
 	document.getElementById("name").value = "";
-	InputCheck();
+	InputRequiredCheck();
 }
 
 function OnClickButton() {
     resultForm.resultTextArea.value=
-    document.getElementById("daigaku").value + "）" + document.getElementById("name").value + 
-    "様\n\nお世話になっております。\nCSC）池上です。\n\n以上、よろしくお願いいたします。";
+    `${document.getElementById("university").value})${document.getElementById("name").value}様
+
+    お世話になっております。
+    CSC）池上です。
+	
+    以上、よろしくお願いいたします。`.replace(/[ \t\r]+/g, "");
 }
