@@ -13,7 +13,7 @@ function inputRequiredCheck() {
 		determination.disabled=flag;
 }
 
-function onClickResetButton(){
+function resetForm(){
 	document.getElementById("university").value = "";
 	document.getElementById("name").value = "";
 	inputRequiredCheck();
