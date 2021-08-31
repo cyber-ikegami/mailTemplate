@@ -56,10 +56,12 @@ function resetForm(){
 	inputRequiredCheck();
 }
 
-// 値の取得(案件管理番号)　memo：getPasswordValueとまとめる
-function getNumberValue(){
+// 値の取得
+function getValue(){
 	const number = document.getElementById("number").value;
 	let numberValue = "";
+	const password = document.getElementById("password").value;
+	let passwordValue = "";
 	
     if(!numberItem.hidden){
 		numberValue = 
@@ -67,13 +69,6 @@ function getNumberValue(){
 		本件について、案件管理番号：${number}で受け付けました。
 		` .replace(/[ \t\r]+/g, "");
 	}
-	return numberValue
-}
-
-// 値の取得(パスワード)
-function getPasswordValue(){
-	const password = document.getElementById("password").value;
-	let passwordValue = "";
 
 	if(!passwordItem.hidden){
 		passwordValue = 
@@ -84,21 +79,24 @@ function getPasswordValue(){
 		------------------------------
 		` .replace(/[ \t\r]+/g, "");
 	}
-	return passwordValue;
+
+	return{
+		first: numberValue,
+		last: passwordValue
+	};
 }
 
 // 出力処理
 function outputResult() {
 	const university = document.getElementById("university").value;
 	const name = document.getElementById("name").value;
-	let numberValue = getNumberValue();
-	let passwordValue = getPasswordValue();
+	let {first, last} = getValue();
 
     resultForm.resultTextArea.value=
     `${university})${name}様
 
     お世話になっております。
     CSC）池上です。
-	${numberValue}${passwordValue}
+	${first}${last}
     以上、よろしくお願いいたします。`.replace(/[ \t\r]+/g, "");
 }
