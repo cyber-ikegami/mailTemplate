@@ -56,21 +56,21 @@ function resetForm(){
 	inputRequiredCheck();
 }
 
-// 値の取得
-function getValue(){
-	const number = document.getElementById("number").value;
+// 値の取得(案件管理番号/パスワード)
+function getOutputValue(){	
 	let numberValue = "";
-	const password = document.getElementById("password").value;
 	let passwordValue = "";
-	
-    if(!numberItem.hidden){
+
+	if(!numberItem.hidden){
+		const number = document.getElementById("number").value;
 		numberValue = 
 		`
 		本件について、案件管理番号：${number}で受け付けました。
 		` .replace(/[ \t\r]+/g, "");
 	}
-
+	
 	if(!passwordItem.hidden){
+		const password = document.getElementById("password").value;
 		passwordValue = 
 		`
 		先程の添付ファイルのパスワードは、以下になります。
@@ -81,8 +81,8 @@ function getValue(){
 	}
 
 	return{
-		first: numberValue,
-		last: passwordValue
+		number: numberValue,
+		password: passwordValue
 	};
 }
 
@@ -90,13 +90,13 @@ function getValue(){
 function outputResult() {
 	const university = document.getElementById("university").value;
 	const name = document.getElementById("name").value;
-	let {first, last} = getValue();
+	const {number, password} = getOutputValue();
 
     resultForm.resultTextArea.value=
     `${university})${name}様
 
     お世話になっております。
     CSC）池上です。
-	${first}${last}
+	${number}${password}
     以上、よろしくお願いいたします。`.replace(/[ \t\r]+/g, "");
 }
